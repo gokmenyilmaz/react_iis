@@ -15,7 +15,7 @@ import Adres from './adres'
 export default class App extends Component {
   render() {
     return (
-      <Router>
+      <Router basename="/modul1">
       <div>
         <ul>
           <li>
