@@ -9,6 +9,7 @@ import {
 import Home from './home'
 import Personel from './personel'
 import Adres from './adres'
+import { MyForm } from './myform';
 
 
 
@@ -27,6 +28,10 @@ export default class App extends Component {
           <li>
             <Link to="/adres">Adres</Link>
           </li>
+
+          <li>
+            <Link to="/form">Form</Link>
+          </li>
         </ul>
 
         <hr />
@@ -41,6 +46,10 @@ export default class App extends Component {
           </Route>
           <Route path="/adres">
             <Adres />
+          </Route>
+
+          <Route path="/form">
+            <MyForm />
           </Route>
         </Switch>
       </div>
