@@ -6,11 +6,10 @@ import {
   Link, NavLink
 } from "react-router-dom";
 
-import Home from './home'
-import Personel from './personel'
-import Adres from './adres'
-import { MyForm } from './myform';
-
+import Home from './Pages/Home'
+import Personel from './Pages/Personel'
+import Adres from './Pages/Adres'
+import MyForm from './Pages/Myform';
 
 
 export default class App extends Component {

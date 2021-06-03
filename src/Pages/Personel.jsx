@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
-export default class personel extends Component {
+import store from '../store'
+
+
+export default class Personel extends Component {
   constructor(props) {
     super(props);
 
@@ -14,6 +17,11 @@ export default class personel extends Component {
 
   componentDidMount() {
     console.log("componentdid");
+
+
+      console.log("store kaydı personel",store.getState());
+
+
   }
 
   componentWillUnmount()
@@ -33,6 +41,8 @@ export default class personel extends Component {
             from {this.state.year}.
           </p>
         </div>
+
+   
       </div>
     );
   }
