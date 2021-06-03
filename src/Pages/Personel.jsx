@@ -3,16 +3,32 @@ import Adres from "./Adres";
 
 import store from "../store";
 
+// id: 1,
+// description: "Bug1",
+// resolved: false
+
 export default class Personel extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      brand: "Ford",
-      model: "Mustang",
-      color: "red",
-      year: 1964,
+      BugList: [
+        {
+          id: 1,
+          description: "Bug1",
+          resolved: false,
+        },
+        {
+          id: 2,
+          description: "Bug2",
+          resolved: true,
+        },
+      ],
     };
+
+    store.subscribe(() => {
+      console.log("store değişti", store.getState());
+    });
   }
 
   componentDidMount() {
@@ -25,18 +41,19 @@ export default class Personel extends Component {
   }
 
   render() {
+    let liste = this.state.BugList;
+
+    const listItems = liste.map((c) => <li key={c.id}>
+      {c.id}
+      {c.description}
+      {c.resolved}
+      
+      </li>);
+
     return (
       <div>
         <h1>Personel</h1>
-        <div>
-          <h1>My {this.state.brand}</h1>
-          <p>
-            It is a {this.state.color}
-            {this.state.model}
-            from {this.state.year}.
-          </p>
-        </div>
-
+        <h1>{listItems}</h1>
         <Adres />
       </div>
     );
