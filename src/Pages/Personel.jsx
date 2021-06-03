@@ -8,34 +8,25 @@ import store from "../store";
 // resolved: false
 
 export default class Personel extends Component {
+
+  un_subscribe={}
+
   constructor(props) {
     super(props);
 
     this.state = {
-      BugList: [
-        {
-          id: 1,
-          description: "Bug1",
-          resolved: false,
-        },
-        {
-          id: 2,
-          description: "Bug2",
-          resolved: true,
-        },
-      ],
+      BugList: store.getState(),
     };
 
-   
   }
 
   componentDidMount() {
-    console.log("componentdid");
+    console.log("componentdid-pers");
     console.log("store kaydı personel", store.getState());
 
     var x=this;
 
-    store.subscribe(() => {
+    this.un_subscribe=store.subscribe(() => {
       x.setState({
         BugList:store.getState()
       })
@@ -44,7 +35,7 @@ export default class Personel extends Component {
   }
 
   componentWillUnmount() {
-    console.log("unmount");
+    this.un_subscribe();
   }
 
   render() {

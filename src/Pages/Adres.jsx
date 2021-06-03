@@ -3,7 +3,7 @@ import store from '../store'
 
 export default class Adres extends Component {
 
-    Kaydet=()=>
+    Ekle=()=>
     {
         store.dispatch({
             type:"bugAdded",
@@ -24,20 +24,18 @@ export default class Adres extends Component {
             }
           
           });
-
-          alert("sil");
     }
 
     render() {
         return (
             <div>
                 adres
-                <button onClick={()=>this.Kaydet()}>
-                    Kaydet
+                <button onClick={()=>this.Ekle()}>
+                    Ekle
                 </button>
 
                 <button onClick={()=>this.Sil()}>
-                    Sil
+                    Sil 3ü
                 </button>
             </div>
         )
