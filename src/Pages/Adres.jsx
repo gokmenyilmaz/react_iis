@@ -16,13 +16,29 @@ export default class Adres extends Component {
           alert("kaydet");
     }
 
+    Sil=()=>
+    {
+        store.dispatch({
+            type:"bugRemoved",
+            payload:{
+              id:3
+            }
+          
+          });
+
+          alert("sil");
+    }
+
     render() {
         return (
             <div>
                 adres
-
                 <button onClick={()=>this.Kaydet()}>
                     Kaydet
+                </button>
+
+                <button onClick={()=>this.Sil()}>
+                    Sil
                 </button>
             </div>
         )
