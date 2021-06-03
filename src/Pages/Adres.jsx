@@ -13,7 +13,6 @@ export default class Adres extends Component {
           
           });
 
-          alert("kaydet");
     }
 
     Sil=()=>

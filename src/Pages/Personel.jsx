@@ -26,14 +26,21 @@ export default class Personel extends Component {
       ],
     };
 
-    store.subscribe(() => {
-      console.log("store değişti", store.getState());
-    });
+   
   }
 
   componentDidMount() {
     console.log("componentdid");
     console.log("store kaydı personel", store.getState());
+
+    var x=this;
+
+    store.subscribe(() => {
+      x.setState({
+        BugList:store.getState()
+      })
+    });
+
   }
 
   componentWillUnmount() {
