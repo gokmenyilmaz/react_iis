@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import Adres from "./Adres";
 
-import store from '../store'
-
+import store from "../store";
 
 export default class Personel extends Component {
   constructor(props) {
@@ -17,16 +17,11 @@ export default class Personel extends Component {
 
   componentDidMount() {
     console.log("componentdid");
-
-
-      console.log("store kaydı personel",store.getState());
-
-
+    console.log("store kaydı personel", store.getState());
   }
 
-  componentWillUnmount()
-  {
-      console.log("unmount");
+  componentWillUnmount() {
+    console.log("unmount");
   }
 
   render() {
@@ -42,7 +37,7 @@ export default class Personel extends Component {
           </p>
         </div>
 
-   
+        <Adres />
       </div>
     );
   }
